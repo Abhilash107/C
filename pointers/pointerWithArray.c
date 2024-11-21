@@ -3,9 +3,6 @@ int main(){
     int nums[] = {1, 3, 5, 7, 9};
     printf("Array address: %p\n",nums);
     int size = sizeof(nums)/sizeof(nums[0]);
-
-    
-
     //changes the value of array elements using pointers
     *nums = 2;
     *(nums+ 4)= 11;

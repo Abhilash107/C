@@ -10,14 +10,15 @@
 int main() {
     // Write C code here
     int age = 19;
-    int* ptr = &age;
     //printf("%p\n", &age);
+    int* ptr = &age;
     //printf("%p", ptr);// same as above
     printf("Address:  %p\n", ptr);
-    printf("Value :%d", *ptr);
+    printf("Value :%d\n", *ptr);
 
     *ptr = 20;
-    printf("%d\n", age);// change the value of age variable'
+    printf("%d\n", age);// change the value of age variable
+
     
     return 0;
 }
