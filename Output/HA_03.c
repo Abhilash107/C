@@ -231,5 +231,57 @@
 //             arr[i] = 0;
 // }
 
+// 15.
+// int main()
+// {
+//     int i, j;
+//     int a[8] = {1, 2, 3, 4, 5, 6, 7, 8};
+//     for (i = 0; i < 3; i++)
+//     {
+//         a[i] = a[i] + 1;
+//         i++;
+//     }
+//     i--;
+//     for (j = 7; j > 4; j--)
+//     {
+//         int i = j / 2;
+//         a[i] = a[i] - 1;
+//     }
+//     printf("%d %d\n", i, a[i]); // 3 2
+//     for (int i = 0; i < 8; i++)
+//         printf("%d ", a[i]); // 2 2 3 2 5 6 7 8
+//     return 0;
+// }
 
-//15.
+
+//16.
+#define N 50
+int fun(int X[], int Y[], int Z[], int n);
+int main() {
+int X[N], Y[N], Z[N],n=6,s,i;
+s=fun(X,Y,Z,n);
+for(i=0;i<=n;i++)
+printf("%d ",X[i]);//0 1 2 7 26 94 344
+printf("\n");
+for(i=0;i<=n;i++)
+printf("%d ",Y[i]);//0 2 4 14 52 188 688 
+printf("\n");
+for(i=0;i<=n;i++)
+printf("%d ",Z[i]);//0 3 12 42 156 564 2064
+printf("\n");
+printf("Last column sum=%d", s);//Last column sum=
+return 0;
+}
+int fun(int X[], int Y[], int Z[], int n)
+{
+int i;
+X[0]=Y[0]=Z[0]=0;
+X[1]=1;Y[1]=2;Z[1]=3;
+for(i=2;i<=n;i++){
+X[i]=Y[i-1]+Z[i-2];
+Y[i]=2*X[i];
+Z[i]=3*Y[i];
+}
+return(Y[n]+Z[n]+X[n]);
+}
+
