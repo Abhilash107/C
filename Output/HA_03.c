@@ -119,56 +119,117 @@
 //  return 0;
 //  }
 
-//7. //!imp
-// #include <stdio.h>
-// void f(int *p, int m)
-// {
-//     m = m + 5;// j = 15
-//     *p = *p + m;// 20
-//     return;
-// }
-// void main()
-// {
-//     int i = 5, j = 10;// i's address is passed so i => 20
-//     f(&i, j);//j remains 10 (unchanged, as m was passed by value).
-//     printf("%d", i + j);
-// }
+// 7. //!imp
+//  #include <stdio.h>
+//  void f(int *p, int m)
+//  {
+//      m = m + 5;// j = 15
+//      *p = *p + m;// 20
+//      return;
+//  }
+//  void main()
+//  {
+//      int i = 5, j = 10;// i's address is passed so i => 20
+//      f(&i, j);//j remains 10 (unchanged, as m was passed by value).
+//      printf("%d", i + j);
+//  }
 
-//8.
-// int main(){
-// char s1[7]="1234",*p;
-// p=s1+2;// p points to 3
-// *p='0';
-// printf("%s", s1);//1204
-// }
+// 8.
+//  int main(){
+//  char s1[7]="1234",*p;
+//  p=s1+2;// p points to 3
+//  *p='0';
+//  printf("%s", s1);//1204
+//  }
 
-//9. //!imp
-// int f1(int a, int b){
-// int c;
-// c=a;
-// a=b;
-// b=c;
-// }
-// int f2(int *a,int *b){
-// int c;
-// c=*a;
-// *a=*b;
-// *b=c;
-// }
-// int main(){
-// int a=4,b=5,c=6;
-// f1(a,b);//These changes only affect the local copies of a and b within f1. The values of a and b in main remain unchanged.
-// f2(&b,&c);
-// printf("%d",c-a-b);
-// }
+// 9. //!imp
+//  int f1(int a, int b){
+//  int c;
+//  c=a;
+//  a=b;
+//  b=c;
+//  }
+//  int f2(int *a,int *b){
+//  int c;
+//  c=*a;
+//  *a=*b;
+//  *b=c;
+//  }
+//  int main(){
+//  int a=4,b=5,c=6;
+//  f1(a,b);//These changes only affect the local copies of a and b within f1. The values of a and b in main remain unchanged.
+//  f2(&b,&c);
+//  printf("%d",c-a-b);
+//  }
 
 // #include <stdio.h>
 // int main()
 // {
 // int i;
 // int *pi=&i;
-// scanf("%d",pi);// whatever the input gets stored in i
+// scanf("%d",pi);// whatever the input reads, it gets stored in i
 // printf("%d\n",i+5);// i + 5
 // return 0;
 // }
 
+// 11.
+//  int MyX(int *E, unsigned int size)
+//  {
+//  int Y = 0;
+//  int Z;
+//  int i, j, k;
+//  for(i = 0; i < size; i++)
+//  Y = Y + E[i];
+//  for(i = 0; i < size; i++)
+//  for(j = i; j < size; j++)
+//  {
+//  Z = 0;
+//  for(k = i; k <= j; k++)
+//  Z = Z + E[k];
+//  if (Z > Y)
+//  Y = Z;
+//  }
+//  return Y;
+//  }
+//  maximum possible sum of elements in any sub-array of array E.
+
+// 13.
+// #include <stdio.h>
+// void swap(int *p, int *q);
+// int main()
+// {
+//     int a = 10, b = 20;
+//     swap(&a, &b);
+//     printf("%d %d", a, b); // 10 20
+//     return 0;
+// }
+// void swap(int *p, int *q)
+// {
+//     p = q;    // pointer p to point to the same location as q
+//     *p = 100; // p points to q now and val => 100
+//     *q = 20;  // now again val => 20
+// }
+
+// 14.
+// #define MAX 100
+// void set(int arr[], int n);
+// int main()
+// {
+//     int arr[MAX], n = 10, i;
+//     set(arr, n);
+//     for (i = 0; i < n; i++)
+//         printf("%d ", arr[i]); // 1 0 1 0 1 0 1 0 1 0
+//     return 0;
+// }
+// void set(int arr[], int n)
+// {
+//     int i;
+//     for (i = 0; i < n; i++)
+//         if (i % 2 == 0)
+//             arr[i] = 1;
+//         else
+//             arr[i] = 0;
+// }
+
+
+//15.
