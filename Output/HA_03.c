@@ -253,35 +253,70 @@
 //     return 0;
 // }
 
+// 16.
+// #define N 50
+// int fun(int X[], int Y[], int Z[], int n);
+// int main()
+// {
+//     int X[N], Y[N], Z[N], n = 6, s, i;
+//     s = fun(X, Y, Z, n);
+//     for (i = 0; i <= n; i++)
+//         printf("%d ", X[i]); // 0 1 2 7 26 94 344
+//     printf("\n");
+//     for (i = 0; i <= n; i++)
+//         printf("%d ", Y[i]); // 0 2 4 14 52 188 688
+//     printf("\n");
+//     for (i = 0; i <= n; i++)
+//         printf("%d ", Z[i]); // 0 3 12 42 156 564 2064
+//     printf("\n");
+//     printf("Last column sum=%d", s); // Last column sum=
+//     return 0;
+// }
+// int fun(int X[], int Y[], int Z[], int n)
+// {
+//     int i;
+//     X[0] = Y[0] = Z[0] = 0;
+//     X[1] = 1;
+//     Y[1] = 2;
+//     Z[1] = 3;
+//     for (i = 2; i <= n; i++)
+//     {
+//         X[i] = Y[i - 1] + Z[i - 2];
+//         Y[i] = 2 * X[i];
+//         Z[i] = 3 * Y[i];
+//     }
+//     return (Y[n] + Z[n] + X[n]);
+//}
 
-//16.
-#define N 50
-int fun(int X[], int Y[], int Z[], int n);
-int main() {
-int X[N], Y[N], Z[N],n=6,s,i;
-s=fun(X,Y,Z,n);
-for(i=0;i<=n;i++)
-printf("%d ",X[i]);//0 1 2 7 26 94 344
-printf("\n");
-for(i=0;i<=n;i++)
-printf("%d ",Y[i]);//0 2 4 14 52 188 688 
-printf("\n");
-for(i=0;i<=n;i++)
-printf("%d ",Z[i]);//0 3 12 42 156 564 2064
-printf("\n");
-printf("Last column sum=%d", s);//Last column sum=
-return 0;
-}
-int fun(int X[], int Y[], int Z[], int n)
-{
-int i;
-X[0]=Y[0]=Z[0]=0;
-X[1]=1;Y[1]=2;Z[1]=3;
-for(i=2;i<=n;i++){
-X[i]=Y[i-1]+Z[i-2];
-Y[i]=2*X[i];
-Z[i]=3*Y[i];
-}
-return(Y[n]+Z[n]+X[n]);
-}
+// 17.
+// #include <stdio.h>
+// int main()
+// {
+//     char p[20], str[] = "STRING";
+//     int l = 0;
+//     for (l = 0; str[l] !='\0'; l++);
+//     l = l - 1;
+//     for (int i = 0; i <= l; i++)
+//     {
+//         p[i] = str[l - i];
+//     }
+//     printf("%s", p);//Since p is not null-terminated, printf("%s", p) will print the reversed string ("GNIRTS") followed by garbage characters until a random null byte is encountered in memory.
+//     return 0;
+// }
+
+
+// int main() {
+// char p[20];
+// char str[]="STRING";
+// int l=0;
+// for(l=0;str[l]!='\0';l++);
+// for(int i=0;i<=l;i++){
+// p[i]=str[l-i];
+// }
+// printf("%s", p);
+//return 0;}//When i = 0: p[0] = str[6] → p[0] = '\0' (null terminator from str).
+//p[0] = '\0', printf sees an empty string and stops immediately.
+
+//19.
+
 
