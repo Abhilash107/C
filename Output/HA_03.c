@@ -289,7 +289,7 @@
 //}
 
 // 17.
-// #include <stdio.h>
+#include <stdio.h>
 // int main()
 // {
 //     char p[20], str[] = "STRING";
@@ -304,7 +304,6 @@
 //     return 0;
 // }
 
-
 // int main() {
 // char p[20];
 // char str[]="STRING";
@@ -314,9 +313,63 @@
 // p[i]=str[l-i];
 // }
 // printf("%s", p);
-//return 0;}//When i = 0: p[0] = str[6] → p[0] = '\0' (null terminator from str).
-//p[0] = '\0', printf sees an empty string and stops immediately.
+// return 0;}//When i = 0: p[0] = str[6] → p[0] = '\0' (null terminator from str).
+// p[0] = '\0', printf sees an empty string and stops immediately.
 
-//19.
+// 19.
+//  void cse(int *, int);
+//  int main() {
+//  int a=111;
+//  printf("%d\n",a);//111
+//  cse(&a,a);
+//  printf("%d\n",a);//222
+//  printf("%d\n",*(&a));//222
+//  return 0;
+//  }
+//  void cse(int *x, int y)
+//  {
+//  *x=222;
+//  }
 
+// 20.
 
+// int main()
+// {
+//     int rows = 3, cols = 4;
+//     int a[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+//     int i = 80, j = 90, k = 99;
+//     for (i = 0; i < rows; i++)
+//     {
+//         for (j = 0; j < cols; j++)
+//             printf("%d ", a[i][j]);//1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+//         printf("\n");
+//     }
+//     for (i = 0; i < rows; i++)
+//         for (j = 0; j < cols; j++)
+//             if (a[i][j] < k)
+//                 k = a[i][j];
+//     printf("%d", k);//1
+//     return 0;
+// }
+
+// 21.
+//  int main(){
+//  char i;
+//  for(i='A';i<='Z';++i)
+//  printf("%d ",i);//implicit type casting
+//  return 0;
+//  }
+
+// 22.
+// void printxy(int x, int y)
+// {
+//     int *ptr;
+//     x = 0;
+//     ptr = &x;
+//     y = *ptr;
+//     *ptr = 1;
+//     printf("%d %d",x, y);
+// }
+// int main(){
+//     printxy(1,1);//1 0
+// }
