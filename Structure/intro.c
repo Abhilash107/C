@@ -13,7 +13,7 @@ void display(struct info *s){
 int main(){
     struct info student1;
     strcpy(student1.name, "Abhilash");
-    student1.marks = 98;
-    display(&student1);
-
+    student1.marks = 98;  
+    display(&student1);    
+                                            
 }
