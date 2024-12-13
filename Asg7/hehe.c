@@ -160,15 +160,38 @@
 // }
 
 // 13.
+// int main(){
+//     struct out{
+//         char ch[10];
+//         char * str;};
+//     struct b{
+//         char * c;
+//         struct out o;};
+//     struct b s2 = {"ODISHA", "KHURDA", "JOYDEV"};
+//     printf("%s %s %s\n", s2.c, s2.o.str, s2.o.ch);
+//     printf("%s %s\n", ++s2.c, ++s2.o.str);
+//     return 0;
+// }
+
+// 14.
+#include <string.h>
+typedef struct
+{
+    char name[30];
+    double diameter;
+    int moons;
+    double or_time, ro_time;
+} planet_t;
+
 int main(){
-    struct out{
-        char ch[10];
-        char * str;};
-    struct b{
-        char * c;
-        struct out o;};
-    struct b s2 = {"ODISHA", "KHURDA", "JOYDEV"};
-    printf("%s %s %s\n", s2.c, s2.o.str, s2.o.ch);
-    printf("%s %s\n", ++s2.c, ++s2.o.str);
-    return 0;
+    planet_t p1, p2;
+    p1.diameter = 142.34;
+    p1.moons = 16;
+    p1.or_time = 11.9;
+    p1.ro_time = 9.23;
+    planet_t *p = &p1;
+    strcpy(p1.name, "Jupiter");
+    printf("%lf %d %lf %lf %s\n", p1.diameter, p1.moons, p1.or_time, p1.ro_time, p1.name);
+    printf("%lf %d %lf %lf %s\n", p->diameter, p->moons, p->or_time, p->ro_time, p->name);
+
 }
