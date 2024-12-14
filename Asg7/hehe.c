@@ -195,3 +195,4 @@ int main(){
     printf("%lf %d %lf %lf %s\n", p->diameter, p->moons, p->or_time, p->ro_time, p->name);
 
 }
+//todo: linkedList sorting and date format qns
