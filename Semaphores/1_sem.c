@@ -9,8 +9,6 @@
 /* FOR FORK */
 #include <sys/types.h>
 #include <unistd.h>
-
-
 #include <sys/wait.h>
 
 #define SEM_NAME_1 "/sem_1"
