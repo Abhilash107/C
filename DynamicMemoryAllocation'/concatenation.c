@@ -26,7 +26,6 @@ char* concatenateStrings(const char* str1, const char* str2) {
 
 int main() {
     char str1[100] = "1 2 3 ", str2[100] = "4 5 6";
-
    
     char* concatenated = concatenateStrings(str1, str2);
 
